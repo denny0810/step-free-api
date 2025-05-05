@@ -44,8 +44,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            denny0810/${{ steps.repo-set.outputs.repo_name }}:${{ steps.tag_name.outputs.tag }}
-            denny0810/${{ steps.repo-set.outputs.repo_name }}:latest
+            denny0810/step-free-api:${{ steps.tag_name.outputs.tag }}
+            denny0810/step-free-api:latest
           platforms: linux/amd64,linux/arm64
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          build-args: TARGETPLATFORM=${{ matrix.platform }}
