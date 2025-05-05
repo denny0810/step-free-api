@@ -22,6 +22,7 @@ export default {
             if (CHAT_AUTHORIZATION) {
                 request.headers.authorization = "Bearer " + CHAT_AUTHORIZATION;
             }
+            
             // refresh_token切分
             const tokens = chat.tokenSplit(request.headers.authorization);
             // 随机挑选一个refresh_token
