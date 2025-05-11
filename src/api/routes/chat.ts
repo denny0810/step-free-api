@@ -34,7 +34,7 @@ export default {
             }
 
             // refresh_token切分
-            const tokens = chat.tokenSplit(authHeader);
+            const tokens = chat.tokenSplit(request.headers.authorization);
             // 随机挑选一个refresh_token
             const token = _.sample(tokens);
           
